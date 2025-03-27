@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#facesCanvas {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+#info {
+  position: absolute;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 1px 1px 10px rgb(194, 190, 190);
+  top: 10px;
+  left: 10px;
+}
+
+#faces {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#info > #field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#info > #field p:first-child {
+  font-weight: 600;
+}
