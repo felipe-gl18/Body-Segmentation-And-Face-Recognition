@@ -1,5 +1,6 @@
 import "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js";
 import "https://cdn.jsdelivr.net/npm/@tensorflow-models/body-segmentation@1.0.2/dist/body-segmentation.min.js";
+import { Camera } from "./camera.js";
 
 const model = bodySegmentation.SupportedModels.BodyPix;
 const segmenterConfig = {
@@ -12,7 +13,7 @@ let video;
 let segmenter;
 
 async function setup() {
-  video = await runVideo();
+  video = await new Camera().run();
   segmenter = await bodySegmentation.createSegmenter(model, segmenterConfig);
   requestAnimationFrame(runSegmentation);
 }
@@ -44,23 +45,6 @@ async function runSegmentation() {
     );
   }
   requestAnimationFrame(runSegmentation);
-}
-
-async function runVideo() {
-  const videoElement = document.createElement("video");
-  videoElement.autoplay = true;
-  videoElement.height = 500;
-  videoElement.width = 500;
-
-  const stream = await navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: false,
-  });
-
-  videoElement.srcObject = stream;
-  await new Promise((resolve) => (videoElement.onloadedmetadata = resolve));
-
-  return videoElement;
 }
 
 setup();
