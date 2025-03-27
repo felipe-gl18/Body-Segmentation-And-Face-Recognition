@@ -38,7 +38,7 @@ async function runSegmentation() {
       canvas,
       video,
       coloredPartImage,
-      0.7, // opacity
+      0.4, // opacity
       0, // maskBlurAmount
       false, // flipHorizontal
       10.0 // pixelCellWidth

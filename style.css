@@ -40,13 +40,13 @@ canvas {
   right: 10px;
 }
 
-#info > #field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+#info > #field > p:first-child {
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-#info > #field p:first-child {
-  font-weight: 600;
+#info > #field > #dectedPeople {
+  list-style: none;
+  padding: 0;
 }
